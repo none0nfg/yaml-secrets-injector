@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3
 import chevron
-import sys
+import os
 
 
 def main(files, content):
@@ -10,7 +10,6 @@ def main(files, content):
 
 
 if __name__ == '__main__':
-    print(sys.argv)
-    if len(sys.argv) < 3:
-        raise Exception("Provide files, content input data")
-    main(sys.argv[1], sys.argv[2])
+    inject_files = os.getenv("INPUT_INJECT_FILES")
+    secrets = os.getenv("INPUT_SECRETS")
+    main(inject_files, secrets)
