@@ -2,10 +2,10 @@ name: 'Inject secrets to yaml files'
 description: 'Allows to pass GHA secrets and inject it into yaml files'
 inputs:
   inject_files:
-    description: 'Array of paths to the files to inject'
+    description: 'Array of paths to the files to inject, splitted by newlines'
     required: true
   secrets:
-    description: 'Array of json formatted secrets'
+    description: 'Array of json formatted secrets, usual ${{ toJSON(secrets) }}'
     required: true
 runs:
   using: docker
