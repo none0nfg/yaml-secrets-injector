@@ -5,7 +5,7 @@ inputs:
     description: 'Array of paths to the files to inject, splitted by newlines'
     required: true
   secrets:
-    description: 'Array of json formatted secrets, usual ${{ toJSON(secrets) }}'
+    description: 'Array of json formatted secrets, usual toJSON(secrets)'
     required: true
 runs:
   using: docker
